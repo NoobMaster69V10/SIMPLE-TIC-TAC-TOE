@@ -14,7 +14,7 @@ def x_pos(pos):
                 pos_lst.append(new_pos)
                 break
 
-    for i in range(1, 10):  # Appends X positions with is not occupied to pos_lst
+    for i in range(1, 10):  # Appends X position, which is not occupied, to pos_lst
         if pos == p[i]:
             p[i] = 'X'
             pos_lst.append(pos)
@@ -29,7 +29,7 @@ def o_pos(pos):
                 pos_lst.append(new_pos)
                 break
 
-    for i in range(1, 10):  # Appends O positions with is not occupied to pos_lst
+    for i in range(1, 10):  # Appends O position, which is not occupied, to pos_lst
         if pos == p[i]:
             p[i] = 'O'
             pos_lst.append(pos)
