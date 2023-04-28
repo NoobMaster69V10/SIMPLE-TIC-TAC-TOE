@@ -8,8 +8,8 @@ pos_lst = []  # Game elements position list
 def x_pos(pos):
     if pos in pos_lst:  # Checks if X position is occupied
         while True:
-            new_pos = input("This position is occupied, please enter another! >>> ")
-            if new_pos not in pos_lst:
+            new_pos = input("This position is occupied or not valid, please enter another! >>> ")
+            if new_pos not in pos_lst and len(new_pos) == 1 and new_pos.isnumeric() and new_pos != '0':
                 p[int(new_pos)] = 'X'
                 pos_lst.append(new_pos)
                 break
@@ -23,8 +23,8 @@ def x_pos(pos):
 def o_pos(pos):
     if pos in pos_lst:  # Checks if O position is occupied
         while True:
-            new_pos = input("This position is occupied, please enter another! >>> ")
-            if new_pos not in pos_lst:
+            new_pos = input("This position is occupied or not valid, please enter another! >>> ")
+            if new_pos not in pos_lst and len(new_pos) == 1 and new_pos.isnumeric() and new_pos != '0':
                 p[int(new_pos)] = 'O'
                 pos_lst.append(new_pos)
                 break
