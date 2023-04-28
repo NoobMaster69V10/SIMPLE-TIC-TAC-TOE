@@ -66,7 +66,7 @@ def win():  # Win function
 
 def input_validator(user_name, sign):  # Input validator
     player_input = input(f"{user_name}, enter '{sign}' position  >>> ")
-    if len(player_input) > 1 or player_input.isalpha():
+    if len(player_input) > 1 or player_input.isalpha() or player_input == '0':
         while True:
             player_input = input(f"{user_name}, enter '{sign}' valid position  >>> ")
             if len(player_input) == 1 and player_input.isnumeric():
