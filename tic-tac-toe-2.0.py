@@ -14,7 +14,7 @@ def x_pos(pos):
                 pos_lst.append(new_pos)
                 break
 
-    for i in range(1, 10):  # Appends X position, which is not occupied, to pos_lst
+    for i in range(1, 10):  # Appends X positions with is not occupied to pos_lst
         if pos == p[i]:
             p[i] = 'X'
             pos_lst.append(pos)
@@ -29,7 +29,7 @@ def o_pos(pos):
                 pos_lst.append(new_pos)
                 break
 
-    for i in range(1, 10):  # Appends O position, which is not occupied, to pos_lst
+    for i in range(1, 10):  # Appends O positions with is not occupied to pos_lst
         if pos == p[i]:
             p[i] = 'O'
             pos_lst.append(pos)
@@ -64,10 +64,20 @@ def win():  # Win function
         return True
 
 
+def input_validator(user_name, sign):  # Input validator
+    player_input = input(f"{user_name}, enter '{sign}' position  >>> ")
+    if len(player_input) > 1 or player_input.isalpha():
+        while True:
+            player_input = input(f"{user_name}, enter '{sign}' valid position  >>> ")
+            if len(player_input) == 1 and player_input.isnumeric():
+                break
+    return player_input
+
+
 def tic_tac_toe_game():  # Game
     while True:
         table_print()  # Prints game area
-        player_1 = input(f"{first_user}, enter 'X' position  >>> ")  # Player_1 input
+        player_1 = input_validator(first_user, 'X')  # Player_1 input
         x_pos(player_1)  # X position func
         if win():  # Checks if someone won
             table_print()  # Prints game area
@@ -86,7 +96,7 @@ def tic_tac_toe_game():  # Game
                 table_print()
             else:
                 break
-        player_2 = input(f"{second_user}, enter 'O' position  >>> ")  # Player_2 input
+        player_2 = input_validator(second_user, 'O')  # Player_2 input
         o_pos(player_2)  # O position func
         if win():  # Checks if someone won
             table_print()  # Prints game area
